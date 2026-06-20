@@ -74,23 +74,6 @@ folder__page.html.20260620-184500.html
 
 如果保存时发现文件在磁盘上已经被其他程序修改，页面会提示是否强制覆盖。
 
-## GitHub 上传建议
-
-如果只想上传工具本身，建议提交这些文件：
-
-```text
-app/
-package.json
-server.js
-README.md
-```
-
-`content/` 中的业务 HTML 页面和 `backups/` 中的备份文件是否提交，取决于你的使用场景：
-
-- 如果这是一个页面管理工具仓库，可以不提交 `content/` 和 `backups/`。
-- 如果希望仓库同时保存待管理页面，可以提交 `content/` 中的 HTML 文件。
-- 一般不建议提交 `backups/`，因为它会随着保存操作不断增长。
-
 ## 常用命令
 
 ```bash
