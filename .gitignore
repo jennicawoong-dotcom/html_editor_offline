@@ -1,0 +1,17 @@
+# Runtime content and generated backups
+content/*
+!content/.gitkeep
+backups/*
+!backups/.gitkeep
+
+# Local dependencies and logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

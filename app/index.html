@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>本地 HTML CMS</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <header class="brand">
+          <div>
+            <h1>HTML CMS</h1>
+            <p>本地网页编辑器</p>
+          </div>
+          <button id="refreshBtn" class="icon-button" title="刷新文件列表" aria-label="刷新文件列表">↻</button>
+        </header>
+
+        <label class="search">
+          <span>搜索文件</span>
+          <input id="searchInput" type="search" placeholder="输入文件名或路径">
+        </label>
+
+        <div id="fileList" class="file-list" aria-live="polite"></div>
+      </aside>
+
+      <main class="workspace">
+        <header class="toolbar">
+          <div class="file-title">
+            <span id="currentPath">请选择一个 HTML 文件</span>
+            <small id="fileMeta"></small>
+          </div>
+          <div class="actions">
+            <button id="visualEditBtn" class="secondary" type="button" disabled>预览编辑</button>
+            <button id="sourceToggleBtn" class="secondary" type="button" disabled>源码</button>
+            <button id="previewBtn" class="secondary" type="button" disabled>刷新预览</button>
+            <button id="saveBtn" class="primary" type="button" disabled>保存</button>
+          </div>
+        </header>
+
+        <section id="emptyState" class="empty-state">
+          <h2>把 HTML 文件放进 content 目录</h2>
+          <p>左侧会显示所有 .html 和 .htm 文件。点击文件后可直接在预览中修改文字并保存。</p>
+        </section>
+
+        <section id="editorGrid" class="editor-grid source-hidden hidden">
+          <div class="pane editor-pane">
+            <div class="pane-title">
+              <span>源码</span>
+              <small id="dirtyState">未修改</small>
+            </div>
+            <textarea id="editor" spellcheck="false"></textarea>
+          </div>
+          <div class="pane preview-pane">
+            <div class="pane-title">
+              <span>预览</span>
+              <small id="previewState">打开“预览编辑”后可直接改文字</small>
+            </div>
+            <iframe id="preview" title="HTML 预览" sandbox="allow-same-origin allow-scripts allow-forms allow-popups"></iframe>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="/main.js"></script>
+  </body>
+</html>

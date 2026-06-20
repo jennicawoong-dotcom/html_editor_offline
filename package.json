@@ -1,0 +1,9 @@
+{
+  "name": "local-html-cms",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "dev": "node server.js"
+  }
+}
